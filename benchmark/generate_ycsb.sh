@@ -3,14 +3,16 @@
 set -e
 
 #BASE_DIR="/hpi/fs00/home/lawrence.benson/clion/viper1/benchmark"
-BASE_DIR="/lab505/gjk/viper/benchmark"
+BASE_DIR="/home/ms-admin/ztong/viper-learned-index/benchmark"
 PREFILL_CONF="${BASE_DIR}/config/ycsb_prefill.conf"
-DATA_DIR="/mnt/tmpssd/aikv/ycsb-data-test"
+#DATA_DIR="/mnt/tmpssd/aikv/ycsb-data-test"
+DATA_DIR="/home/ms-admin/ztong/ycsb_data_test"
 
 CONFIGS=( "5050_uniform" "5050_zipf" "1090_uniform" "1090_zipf" )
 
 #cd "/hpi/fs00/home/lawrence.benson/ycsb"
-cd "/lab505/gjk/ycsb-0.17.0"
+#cd "/lab505/gjk/ycsb-0.17.0"
+cd "/home/ms-admin/ztong/ycsb-0.17.0"
 
 echo "GENERATING PREFILL DATA"
 ./bin/ycsb load basic -P ${PREFILL_CONF} -s > "${DATA_DIR}/raw_prefill.dat"
